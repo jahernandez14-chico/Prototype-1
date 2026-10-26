@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MealMate - Find recipes based on ingredients you have">
+  <title>MealMate</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>MealMate</h1>
+      <nav>
+        <button data-view="find-meals">Find Meals</button>
+        <button data-view="manage-food">Manage Food</button>
+        <button data-view="shopping">Shopping</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="find-meals" class="view active">
+        <h2>Find Meals</h2>
+        <div id="ingredient-input">
+          <input type="text" id="ingredient-name" placeholder="Enter ingredient">
+          <button id="add-ingredient">Add</button>
+        </div>
+        <div id="ingredient-list"></div>
+        <div id="filters">
+          <h3>Filters</h3>
+          <div class="filter-group">
+            <label>Budget:</label>
+            <select id="budget-filter">
+              <option value="">Any</option>
+              <option value="5">Under $5</option>
+              <option value="10">Under $10</option>
+              <option value="15">Under $15</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Cooking Time:</label>
+            <select id="time-filter">
+              <option value="">Any</option>
+              <option value="15">Under 15 min</option>
+              <option value="30">Under 30 min</option>
+              <option value="60">Under 60 min</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Dietary:</label>
+            <select id="dietary-filter">
+              <option value="">Any</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="gluten-free">Gluten-Free</option>
+              <option value="nut-free">Nut-Free</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Equipment:</label>
+            <select id="equipment-filter">
+              <option value="">Any</option>
+              <option value="microwave">Microwave</option>
+              <option value="air-fryer">Air Fryer</option>
+              <option value="stove">Stove</option>
+            </select>
+          </div>
+        </div>
+        <button id="search-recipes">Search Recipes</button>
+        <div id="recipe-results"></div>
+      </section>
+
+      <section id="manage-food" class="view">
+        <h2>Manage Food</h2>
+        <div id="add-ingredient-form">
+          <input type="text" id="pantry-ingredient-name" placeholder="Ingredient name">
+          <input type="number" id="pantry-ingredient-quantity" placeholder="Quantity">
+          <input type="text" id="pantry-ingredient-unit" placeholder="Unit (e.g., cups, pieces)">
+          <button id="add-to-pantry">Add to Pantry</button>
+        </div>
+        <div id="pantry-list"></div>
+      </section>
+
+      <section id="shopping" class="view">
+        <h2>Shopping List</h2>
+        <div id="shopping-list"></div>
+        <div id="grocery-deals">
+          <h3>Deals</h3>
+          <div id="deals-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/src/index.js"></script>
+</body>
+</html>
